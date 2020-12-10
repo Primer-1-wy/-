@@ -1,31 +1,31 @@
-ÀÏÊ¦Ëµ£ºstruct  Grade_Info
+è€å¸ˆè¯´ï¼šstruct  Grade_Info
 {
   int  score;    
   struct  Grade_Info  *next;
 };
 typedef  struct  Grade_Info  NODE; 
 
-ÀÏÊ¦Ëµ£ºNODE *Create_LinkList ( )  //´´½¨Á´±í
+è€å¸ˆè¯´ï¼šNODE *Create_LinkList ( )  //åˆ›å»ºé“¾è¡¨
 {
   NODE *head, *tail, *pnew;
   int scor;
-  head = (NODE *)malloc (sizeof(NODE));  //´´½¨Í·½Úµã
-  if (head == NULL)   //´´½¨Ê§°Ü,Ôò·µ»Ø
+  head = (NODE *)malloc (sizeof(NODE));  //åˆ›å»ºå¤´èŠ‚ç‚¹
+  if (head == NULL)   //åˆ›å»ºå¤±è´¥,åˆ™è¿”å›
   {
     printf ("no enough memory!\n");
     return (NULL);
   }  
-  head->next = NULL;    //Í·½ÚµãµÄÖ¸ÕëÓòÖÃNULL
-  tail = head;                    //¿ªÊ¼Ê±Î²Ö¸ÕëÖ¸ÏòÍ·½Úµã
+  head->next = NULL;    //å¤´èŠ‚ç‚¹çš„æŒ‡é’ˆåŸŸç½®NULL
+  tail = head;                    //å¼€å§‹æ—¶å°¾æŒ‡é’ˆæŒ‡å‘å¤´èŠ‚ç‚¹
   printf ("input the score of students:\n");
-  while (1)  //´´½¨Ñ§Éú³É¼¨ÏßĞÔÁ´±í
+  while (1)  //åˆ›å»ºå­¦ç”Ÿæˆç»©çº¿æ€§é“¾è¡¨
   {
-    scanf ("%d", &score);  //ÊäÈë³É¼¨
-    if (score < 0)         //³É¼¨Îª¸º,Ñ­»·ÍË³ö
+    scanf ("%d", &score);  //è¾“å…¥æˆç»©
+    if (score < 0)         //æˆç»©ä¸ºè´Ÿ,å¾ªç¯é€€å‡º
         break;
-     //´´½¨Ò»ĞÂ½Úµã
+     //åˆ›å»ºä¸€æ–°èŠ‚ç‚¹
     pnew = (NODE *)malloc (sizeof(NODE));  
-    if (pnew == NULL)    //´´½¨ĞÂ½ÚµãÊ§°Ü,Ôò·µ»Ø
+    if (pnew == NULL)    //åˆ›å»ºæ–°èŠ‚ç‚¹å¤±è´¥,åˆ™è¿”å›
     {
       printf ("no enough memory!\n");
       return (NULL);
@@ -37,7 +37,7 @@ typedef  struct  Grade_Info  NODE;
   }
   return (head);
 }
-ÀÏÊ¦Ëµ£ºvoid Display_LinkList(NODE *head)  
+è€å¸ˆè¯´ï¼švoid Display_LinkList(NODE *head)  
 {
   NODE *p;
   for (p = head->next; p != NULL; p = p->next)
@@ -45,63 +45,63 @@ typedef  struct  Grade_Info  NODE;
   printf ("\n");
 }
 
-ÀÏÊ¦Ëµ£ºstruct  Grade_Info
+è€å¸ˆè¯´ï¼šstruct  Grade_Info
 {
-	//Êı¾İÓò
-  char xm[10];//Ñ§ÉúĞÕÃû   
-  char xh[11];//Ñ§ºÅ
-  char xb;   //ĞÔ±ğ
-  double  cj[M+2];//ÓïÎÄ¡¢ÊıÑ§¡¢ÍâÓïÈıÃÅµ¥¿Æ+×Ü·Ö+Æ½¾ù·Ö
-  //Ö¸ÕëÓò
+	//æ•°æ®åŸŸ
+  char xm[10];//å­¦ç”Ÿå§“å   
+  char xh[11];//å­¦å·
+  char xb;   //æ€§åˆ«
+  double  cj[M+2];//è¯­æ–‡ã€æ•°å­¦ã€å¤–è¯­ä¸‰é—¨å•ç§‘+æ€»åˆ†+å¹³å‡åˆ†
+  //æŒ‡é’ˆåŸŸ
   struct  Grade_Info  *next;
 };
-ÀÏÊ¦Ëµ£º#include"p1_stu.h"
+è€å¸ˆè¯´ï¼š#include"p1_stu.h"
 /*
-¹¦ÄÜ£º´´½¨Á´±í
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºNODE*
+åŠŸèƒ½ï¼šåˆ›å»ºé“¾è¡¨
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šNODE*
 */
-NODE *create( )  //´´½¨Á´±í
+NODE *create( )  //åˆ›å»ºé“¾è¡¨
 {
   NODE *head, *tail, *pnew;
-  char xuehao[11];//¾Ö²¿±äÁ¿¡ªÑ§ºÅ
+  char xuehao[11];//å±€éƒ¨å˜é‡â€”å­¦å·
   int j; 
-  head = (NODE *)malloc (sizeof(NODE));  //´´½¨Í·½Úµã
-  if (head == NULL)   //´´½¨Ê§°Ü,Ôò·µ»Ø
+  head = (NODE *)malloc (sizeof(NODE));  //åˆ›å»ºå¤´èŠ‚ç‚¹
+  if (head == NULL)   //åˆ›å»ºå¤±è´¥,åˆ™è¿”å›
   {
     printf ("no enough memory!\n");
     return (NULL);
   }  
-  head->next = NULL;    //Í·½ÚµãµÄÖ¸ÕëÓòÖÃNULL
-  tail = head;                    //¿ªÊ¼Ê±Î²Ö¸ÕëÖ¸ÏòÍ·½Úµã
-  printf ("\n=====ÇëÊäÈëÑ§ÉúĞÅÏ¢=========\n");
-  while (1)  //´´½¨Ñ§Éú³É¼¨ÏßĞÔÁ´±í
+  head->next = NULL;    //å¤´èŠ‚ç‚¹çš„æŒ‡é’ˆåŸŸç½®NULL
+  tail = head;                    //å¼€å§‹æ—¶å°¾æŒ‡é’ˆæŒ‡å‘å¤´èŠ‚ç‚¹
+  printf ("\n=====è¯·è¾“å…¥å­¦ç”Ÿä¿¡æ¯=========\n");
+  while (1)  //åˆ›å»ºå­¦ç”Ÿæˆç»©çº¿æ€§é“¾è¡¨
   {
-	printf ("\n=====ÇëÊäÈëÑ§ºÅ(µ±ÊäÈë#Ê±½áÊø)=\n");
-    scanf ("%s", xuehao);  //ÊäÈëÑ§ºÅµ½¾Ö²¿±äÁ¿Ñ§ºÅ
-    if (strcmp(xuehao,"#")==0)    //Ñ§ºÅÎª#,Ñ­»·ÍË³ö
+	printf ("\n=====è¯·è¾“å…¥å­¦å·(å½“è¾“å…¥#æ—¶ç»“æŸ)=\n");
+    scanf ("%s", xuehao);  //è¾“å…¥å­¦å·åˆ°å±€éƒ¨å˜é‡å­¦å·
+    if (strcmp(xuehao,"#")==0)    //å­¦å·ä¸º#,å¾ªç¯é€€å‡º
         break;
-     //´´½¨Ò»ĞÂ½Úµã
+     //åˆ›å»ºä¸€æ–°èŠ‚ç‚¹
     pnew = (NODE *)malloc (sizeof(NODE));  
-    if (pnew == NULL)    //´´½¨ĞÂ½ÚµãÊ§°Ü,Ôò·µ»Ø
+    if (pnew == NULL)    //åˆ›å»ºæ–°èŠ‚ç‚¹å¤±è´¥,åˆ™è¿”å›
     {
       printf ("no enough memory!\n");
       return (NULL);
     }
-	//½ÚµãÊı¾İÓò
-    strcpy(pnew->xh,xuehao);//Ñ§ºÅ
-	printf("\nÇëÊäÈë¸ÃÑ§ÉúµÄĞÕÃû=");
+	//èŠ‚ç‚¹æ•°æ®åŸŸ
+    strcpy(pnew->xh,xuehao);//å­¦å·
+	printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„å§“å=");
 	scanf("%s",pnew->xm)
-	printf("\nÇëÊäÈë¸ÃÑ§ÉúµÄĞÔ±ğ=");
+	printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æ€§åˆ«=");
 	scanf("%c",&pnew->xb)
     for(j=0;j<M;j++)
 	{
-		printf("\nÇëÊäÈë¸ÃÑ§ÉúµÄ³É¼¨%d=",j+1);
+		printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æˆç»©%d=",j+1);
 		scanf("%lf",pnew->cj[j]); 
 	}
 	pnew->cj[M]=pnew->cj[0]+pnew->cj[1]+pnew->cj[2];
 	pnew->cj[M+1]=pnew->cj[M]/M;
-	//½ÚµãÖ¸ÕëÓò
+	//èŠ‚ç‚¹æŒ‡é’ˆåŸŸ
     pnew->next = NULL;  
     tail->next = pnew;     
     tail = pnew; 
@@ -109,21 +109,95 @@ NODE *create( )  //´´½¨Á´±í
   return (head);
 }
 /*
-¹¦ÄÜ£ºÏÔÊ¾Á´±íÈ«²¿½ÚµãĞÅÏ¢
-²ÎÊı£ºÁ´±íÍ·½ÚµãÖ¸Õë
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šæ˜¾ç¤ºé“¾è¡¨å…¨éƒ¨èŠ‚ç‚¹ä¿¡æ¯
+å‚æ•°ï¼šé“¾è¡¨å¤´èŠ‚ç‚¹æŒ‡é’ˆ
+è¿”å›å€¼ï¼šæ— 
 */
 void display(NODE *head)  
 {
   NODE *p;
   int j;
-  printf("\nÑ§ºÅ   ĞÕÃû   ĞÔ±ğ   ÓïÎÄ  ÊıÑ§  ÍâÓï  ×Ü·Ö  Æ½¾ù·Ö\n");
+  printf("\nå­¦å·   å§“å   æ€§åˆ«   è¯­æ–‡  æ•°å­¦  å¤–è¯­  æ€»åˆ†  å¹³å‡åˆ†\n");
   for (p = head->next; p != NULL; p = p->next)
   {
 	  printf("%-12s%-8s%-3c", pnew->xh,pnew->xm,pnew->xb,)
  	 for(j=0;j<M+2;j++)
 	 {
 		printf("%6.1lf",pnew->cj[j]); 
+	 }	
+  }
+  printf ("\n");
+}
+è€å¸ˆè¯´ï¼š#include"p1_stu.h"
+/*
+åŠŸèƒ½ï¼šåˆ›å»ºé“¾è¡¨
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šNODE*
+*/
+NODE *create( )  //åˆ›å»ºé“¾è¡¨
+{
+  NODE *head, *tail, *pnew;
+  char xuehao[11];//å±€éƒ¨å˜é‡â€”å­¦å·
+  int j; 
+  head = (NODE *)malloc (sizeof(NODE));  //åˆ›å»ºå¤´èŠ‚ç‚¹
+  if (head == NULL)   //åˆ›å»ºå¤±è´¥,åˆ™è¿”å›
+  {
+    printf ("no enough memory!\n");
+    return (NULL);
+  }  
+  head->next = NULL;    //å¤´èŠ‚ç‚¹çš„æŒ‡é’ˆåŸŸç½®NULL
+  tail = head;                    //å¼€å§‹æ—¶å°¾æŒ‡é’ˆæŒ‡å‘å¤´èŠ‚ç‚¹
+  printf ("\n=====è¯·è¾“å…¥å­¦ç”Ÿä¿¡æ¯=========\n");
+  while (1)  //åˆ›å»ºå­¦ç”Ÿæˆç»©çº¿æ€§é“¾è¡¨
+  {
+	printf ("\n=====è¯·è¾“å…¥å­¦å·(å½“è¾“å…¥#æ—¶ç»“æŸ)=\n");
+    scanf ("%s", xuehao);  //è¾“å…¥å­¦å·åˆ°å±€éƒ¨å˜é‡å­¦å·
+    if (strcmp(xuehao,"#")==0)    //å­¦å·ä¸º#,å¾ªç¯é€€å‡º
+        break;
+     //åˆ›å»ºä¸€æ–°èŠ‚ç‚¹
+    pnew = (NODE *)malloc (sizeof(NODE));  
+    if (pnew == NULL)    //åˆ›å»ºæ–°èŠ‚ç‚¹å¤±è´¥,åˆ™è¿”å›
+    {
+      printf ("no enough memory!\n");
+      return (NULL);
+    }
+	//èŠ‚ç‚¹æ•°æ®åŸŸ
+    strcpy(pnew->xh,xuehao);//å­¦å·
+	printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„å§“å=");
+	scanf("%s",pnew->xm);
+	printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æ€§åˆ«=");
+	fflush(stdin);
+	scanf("%c",&pnew->xb);
+    for(j=0;j<M;j++)
+	{
+		printf("\nè¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æˆç»©%d=",j+1);
+		scanf("%lf",&pnew->cj[j]); 
+	}
+	pnew->cj[M]=pnew->cj[0]+pnew->cj[1]+pnew->cj[2];
+	pnew->cj[M+1]=pnew->cj[M]/M;
+	//èŠ‚ç‚¹æŒ‡é’ˆåŸŸ
+    pnew->next = NULL;  
+    tail->next = pnew;     
+    tail = pnew; 
+  }
+  return (head);
+}
+/*
+åŠŸèƒ½ï¼šæ˜¾ç¤ºé“¾è¡¨å…¨éƒ¨èŠ‚ç‚¹ä¿¡æ¯
+å‚æ•°ï¼šé“¾è¡¨å¤´èŠ‚ç‚¹æŒ‡é’ˆ
+è¿”å›å€¼ï¼šæ— 
+*/
+void display(NODE *head)  
+{
+  NODE *p;
+  int j;
+  printf("\nå­¦å·   å§“å   æ€§åˆ«   è¯­æ–‡  æ•°å­¦  å¤–è¯­  æ€»åˆ†  å¹³å‡åˆ†\n");
+  for (p = head->next; p != NULL; p = p->next)
+  {
+	  printf("%-12s%-8s%-3c", p->xh,p->xm,p->xb);
+ 	 for(j=0;j<M+2;j++)
+	 {
+		printf("%6.1lf",p->cj[j]); 
 	 }	
   }
   printf ("\n");
